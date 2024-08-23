@@ -1,6 +1,6 @@
 let pista = parseInt(document.getElementById('qtd-pista').textContent);
-let superior = parseInt(document.getElementById('qtd-superior').textContent);
-let inferior = parseInt(document.getElementById('qtd-inferior').textContent);
+let cadeiraSuperior = parseInt(document.getElementById('qtd-superior').textContent);
+let cadeiraInferior = parseInt(document.getElementById('qtd-inferior').textContent);
 
 function comprar(){
     let escolha = document.getElementById('tipo-ingresso').value;
@@ -28,7 +28,7 @@ function comprarPista(qtd){
 function comprarSuperior(qtd){
     if(qtd <= cadeiraSuperior){
         cadeiraSuperior = cadeiraSuperior - qtd;
-        document.getElementById('qtd-superior').innerHTML = `<span id="qtd-pista">${cadeiraSuperior}</span></li>`;
+        document.getElementById('qtd-superior').textContent = cadeiraSuperior;
     }else{
         alert(`Quantidade indisponivel para cadeira superior`);
     }
@@ -37,8 +37,8 @@ function comprarSuperior(qtd){
 function comprarInferior(qtd){
     if(qtd <= cadeiraInferior){
         cadeiraInferior = cadeiraInferior - qtd;
-        document.getElementById('qtd-inferior').innerHTML = `<span id="qtd-pista">${cadeiraInferior}</span></li>`;
+        document.getElementById('qtd-inferior').textContent = cadeiraInferior;
     }else{
-        alert(`Quantidade indisponivel para ${escolha}`);
+        alert(`Quantidade indisponivel para cadeira inferior`);
     }
 }
